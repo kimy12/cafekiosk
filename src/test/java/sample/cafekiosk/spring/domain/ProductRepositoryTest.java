@@ -12,6 +12,12 @@ import static org.assertj.core.api.Assertions.tuple;
 import static sample.cafekiosk.spring.domain.ProductSellingStatus.*;
 import static sample.cafekiosk.spring.domain.ProductType.HANDMADE;
 
+/**
+ * @DataJpaTest
+ *
+ * 하나의 테스트가 끝나고 트랜잭션 롤백을 하기 때문에 따로 클랜징을 할 필요가 없다.
+ *
+ */
 @ActiveProfiles("test") // test profilefh 로 설정값들이 돌거임
 //@SpringBootTest
 @DataJpaTest // SpringBootTest 보다 갸벼움 jpa관련된 bean 들만 주입
