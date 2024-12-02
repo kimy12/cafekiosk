@@ -11,6 +11,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+import sample.cafekiosk.spring.ControllerTestSupport;
 import sample.cafekiosk.spring.api.controller.product.dto.request.ProductCreateRequest;
 import sample.cafekiosk.spring.api.service.product.ProductService;
 import sample.cafekiosk.spring.api.service.product.response.ProductResponse;
@@ -26,18 +27,18 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@WebMvcTest(controllers = ProductController.class)
-class ProductControllerTest {
+//@WebMvcTest(controllers = ProductController.class)
+class ProductControllerTest extends ControllerTestSupport {
 
-    @Autowired
-    private MockMvc mockMvc;
-
-    @MockBean
-    private ProductService productService;
-
-    // 직렬화 역직렬화를 도와줌
-    @Autowired
-    private ObjectMapper objectMapper;
+//    @Autowired
+//    private MockMvc mockMvc;
+//
+//    @MockBean
+//    private ProductService productService;
+//
+//    // 직렬화 역직렬화를 도와줌
+//    @Autowired
+//    private ObjectMapper objectMapper;
 
     @DisplayName("신규 상품을 등록한다.")
     @Test

@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.transaction.annotation.Transactional;
+import sample.cafekiosk.spring.IntegrationTestSupport;
 
 import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -18,10 +20,11 @@ import static sample.cafekiosk.spring.domain.ProductType.HANDMADE;
  * 하나의 테스트가 끝나고 트랜잭션 롤백을 하기 때문에 따로 클랜징을 할 필요가 없다.
  *
  */
-@ActiveProfiles("test") // test profilefh 로 설정값들이 돌거임
+//@ActiveProfiles("test") // test profilefh 로 설정값들이 돌거임
 //@SpringBootTest
-@DataJpaTest // SpringBootTest 보다 갸벼움 jpa관련된 bean 들만 주입
-class ProductRepositoryTest {
+//@DataJpaTest // SpringBootTest 보다 갸벼움 jpa관련된 bean 들만 주입
+@Transactional
+class ProductRepositoryTest extends IntegrationTestSupport {
     // repository 테스트는 단위테스트와 같은 성격이다.
 
     @Autowired
